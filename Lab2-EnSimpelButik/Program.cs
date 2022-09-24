@@ -21,7 +21,6 @@
                         case ConsoleKey.D1:
                             Login userLogin = new Login();
                             Console.Clear();
-
                             Console.WriteLine("* Logga in *\n");
                             Console.Write("Fyll i ditt namn: ");
                             userLogin.Name = Console.ReadLine();
