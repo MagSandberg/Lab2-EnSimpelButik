@@ -7,12 +7,16 @@
             bool login = false;
             while (login == false)
             {
-                Console.WriteLine("1: Logga in\n2: Registrera ny kund");
+                Console.WriteLine("1: Logga in\n2: Registrera ny kund\nQ: Stäng program");
                 var keyPress = Console.ReadKey();
                 Console.Clear();
-                if (keyPress.Key != ConsoleKey.D1 && keyPress.Key != ConsoleKey.D2)
+                if (keyPress.Key != ConsoleKey.D1 && keyPress.Key != ConsoleKey.D2 && keyPress.Key != ConsoleKey.Q)
                 {
-                    Console.WriteLine("Fel val. Vänligen välj 1 eller 2.\n");
+                    Console.Write("Fel inmatning: ");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write(keyPress.KeyChar);
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("\nVänligen välj 1, 2 eller Q för att avsluta.\n");
                 }
                 else
                 {
@@ -38,7 +42,46 @@
                             Console.ReadKey();
                             //Metod() registrera kund med fält Name, Password 
                             break;
+                        case ConsoleKey.Q:
+                            Environment.Exit(0);
+                            break;
 
+                    }
+                }
+            }
+            bool loggedIn = false;
+            while (loggedIn == false)
+            {
+                Console.WriteLine("1: Handla\n2: Kundvagn\n3: Till kassan\nQ: Stäng program");
+                var keyPress = Console.ReadKey();
+                Console.Clear();
+                if (keyPress.Key != ConsoleKey.D1 && keyPress.Key != ConsoleKey.D2 && keyPress.Key != ConsoleKey.D3 && keyPress.Key != ConsoleKey.Q)
+                {
+                    Console.Write("Fel inmatning: ");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write(keyPress.KeyChar);
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("\nVänligen välj 1, 2, 3 eller Q för att avsluta.\n");
+                }
+                else
+                {
+                    var keyPressed = Console.ReadKey();
+                    switch (keyPressed.Key)
+                    {
+                        case ConsoleKey.D1:
+                            Console.WriteLine("Handla");
+                            Console.ReadKey();
+                            break;
+                        case ConsoleKey.D2:
+                            Console.WriteLine("Kundvagn");
+                            Console.ReadKey();
+                            break;
+                        case ConsoleKey.D3:
+                            Console.WriteLine("Till kassan");
+                            Console.ReadKey();
+                            break;
+                        case ConsoleKey.Q:
+                            break;
                     }
                 }
             }
