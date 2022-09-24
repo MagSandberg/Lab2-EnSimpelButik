@@ -38,6 +38,7 @@
                             Console.ReadKey();
                             //Metod() registrera kund med fält Name, Password 
                             break;
+
                     }
                 }
             }
