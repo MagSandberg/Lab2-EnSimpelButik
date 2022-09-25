@@ -8,24 +8,34 @@ namespace Lab2_EnSimpelButik
 {
     public class Login
     {
-        //Fält
-        private string _name;
-        public string Name
+        //Field
+        public string Name { get; set; }
+        public string Password { get; set; }
+        //Method
+        public static void LoginFields()
         {
-            get { return _name; }
-            set { _name = value; }
+            Login userLogin = new Login();
+            Console.Write("Fyll i ditt namn: ");
+            userLogin.Name = Console.ReadLine();
+            Console.Write("Fyll i ditt lösenord: ");
+            userLogin.Password = Console.ReadLine();
+            Console.Clear();
         }
 
-        private string _password;
-        public string Password
+        public static void VerifyQuit()
         {
-            get { return _password; }
-            set { _password = value; }
+            Console.WriteLine("* Avsluta *\n");
+            Console.WriteLine("Är du säker?\nTryck J för att avsluta eller valfri tangent för att gå tillbaka\n");
+            var verifyQuit = Console.ReadKey();
+            if (verifyQuit.Key == ConsoleKey.J)
+            {
+                Console.Clear();
+                Environment.Exit(0);
+            }
         }
-        //Metod
 
-        //Konstruktor
-        public Login()
+        //Constructor
+    public Login()
         {
             
         }
