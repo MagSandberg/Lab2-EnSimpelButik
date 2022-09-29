@@ -15,6 +15,8 @@ namespace Lab2_EnSimpelButik
         private List<Product> _cart;
         public List<Product> Cart { get { return _cart; } }
 
+        //public List<Product> Cart { get; } = new();
+
         public Customer(string name, string password)
         {
             Name = name;

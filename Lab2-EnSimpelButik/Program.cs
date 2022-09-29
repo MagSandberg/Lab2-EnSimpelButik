@@ -62,8 +62,34 @@ while (true)
             switch (keyPress.Key)
             {
                 case ConsoleKey.D1:
-                    Console.WriteLine("Handla");
-                    Console.ReadKey();
+                    Console.WriteLine("* Handla *\n");
+
+                    Product prodShirt = new Product("T-shirt", 299.99f, 0);
+                    Product prodJeans = new Product("Jeans", 1299.50f, 0);
+                    Product prodCap = new Product("Keps", 159.95f, 0);
+
+                    Console.WriteLine($"Lägg till produkt i kundvagnen med tangenterna 1, 2 och 3\n");
+
+                    Console.WriteLine($"1: {prodShirt.ProdName} | Pris: {prodShirt.Price} | Antal: {prodShirt.Quantity}");
+                    Console.WriteLine("-------------------------------------");
+                    Console.WriteLine($"2: {prodJeans.ProdName}   | Pris: {prodJeans.Price} | Antal: {prodJeans.Quantity}");
+                    Console.WriteLine("-------------------------------------");
+                    Console.WriteLine($"3: {prodCap.ProdName}    | Pris: {prodCap.Price} | Antal: {prodCap.Quantity}");
+
+                    keyPress = Console.ReadKey();
+
+                    switch (keyPress.Key)
+                    {
+                        case ConsoleKey.D1:
+                            prodShirt.Qty();
+                            break;
+                        case ConsoleKey.D2:
+                            prodJeans.Qty();
+                            break;
+                        case ConsoleKey.D3:
+                            prodCap.Qty();
+                            break;
+                    }
                     break;
                 case ConsoleKey.D2:
                     Console.WriteLine("Kundvagn");

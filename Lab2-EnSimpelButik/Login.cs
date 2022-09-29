@@ -10,7 +10,6 @@ namespace Lab2_EnSimpelButik
     {
         //Field
         private string _name;
-
         public string Name
         {
             get { return _name; }
@@ -18,7 +17,6 @@ namespace Lab2_EnSimpelButik
         }
 
         private string _password;
-
         public string Password
         {
             get { return _password; }
@@ -26,6 +24,7 @@ namespace Lab2_EnSimpelButik
         }
 
         //Method
+
         public static void LoginFields()
         {
             Login userLogin = new Login();
